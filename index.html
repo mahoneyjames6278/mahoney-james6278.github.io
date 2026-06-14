@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>James Mahoney — Operations Leader & Project Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     TOKENS
+  ============================================================ */
+  :root {
+    --navy:      #0F1A2E;
+    --navy-card: #1A3A52;
+    --navy-mid:  #1F4E79;
+    --white:     #FFFFFF;
+    --amber:     #F59E0B;
+    --amber-dim: #D97706;
+    --slate:     #7B9EC4;
+    --slate-dim: #4A6A8A;
+    --body-gray: #C8D8E8;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body:    'Inter', system-ui, sans-serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  /* ============================================================
+     RESET & BASE
+  ============================================================ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  a { color: var(--amber); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ============================================================
+     NAV
+  ============================================================ */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2.5rem;
+    background: rgba(15, 26, 46, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(123, 158, 196, 0.15);
+  }
+
+  .nav-logo {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--amber);
+    letter-spacing: 0.05em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--slate);
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  /* ============================================================
+     SECTIONS — shared
+  ============================================================ */
+  section {
+    padding: 6rem 2.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-full {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+  }
+
+  h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: var(--body-gray);
+    max-width: 65ch;
+    margin-bottom: 1rem;
+  }
+
+  .divider {
+    width: 48px;
+    height: 3px;
+    background: var(--amber);
+    margin-bottom: 2rem;
+    border-radius: 2px;
+  }
+
+  /* ============================================================
+     HERO
+  ============================================================ */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 2.5rem 4rem;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    /* ============================================================
+       IMAGE NOTE: Replace the gradient below with your best outdoor
+       landscape photo — the mountains/forest shot from your Canva
+       portfolio works perfectly. Use a dark overlay on top.
+       Example: background: linear-gradient(rgba(15,26,46,0.75), rgba(15,26,46,0.92)), url('hero.jpg') center/cover;
+    ============================================================ */
+    background: linear-gradient(135deg, #0F1A2E 0%, #1A3A52 50%, #0F1A2E 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .hero-tag {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    line-height: 1.0;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-sub {
+    font-size: 1.15rem;
+    color: var(--slate);
+    max-width: 55ch;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--amber);
+    color: var(--navy);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.875rem 1.75rem;
+    border-radius: 3px;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .hero-cta:hover {
+    background: var(--amber-dim);
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+
+  /* ============================================================
+     PROOF POINTS TICKER (THE SIGNATURE ELEMENT)
+     War stories rendered as stats — nobody else has these.
+  ============================================================ */
+  .proof-bar {
+    background: var(--navy-card);
+    border-top: 1px solid rgba(245, 158, 11, 0.3);
+    border-bottom: 1px solid rgba(245, 158, 11, 0.3);
+    padding: 1.25rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .proof-track {
+    display: inline-flex;
+    gap: 0;
+    animation: ticker 30s linear infinite;
+  }
+
+  .proof-track:hover { animation-play-state: paused; }
+
+  @keyframes ticker {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .proof-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0 2.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    color: var(--body-gray);
+  }
+
+  .proof-item .stat {
+    color: var(--amber);
+    font-weight: 500;
+    font-size: 0.85rem;
+  }
+
+  .proof-sep {
+    color: var(--slate-dim);
+    font-size: 0.6rem;
+  }
+
+  /* ============================================================
+     ABOUT
+  ============================================================ */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-photo {
+    position: relative;
+    /* ============================================================
+       IMAGE NOTE: Your professional headshot goes here.
+       The one from your Canva portfolio — navy blazer, glasses.
+       Recommended: square or portrait crop, minimum 800x800px.
+       File name suggestion: headshot.jpg
+    ============================================================ */
+    aspect-ratio: 4/5;
+    background: var(--navy-card);
+    border-radius: 4px;
+    border: 1px solid var(--navy-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .about-photo-placeholder {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--slate-dim);
+    text-align: center;
+    padding: 2rem;
+    line-height: 1.8;
+  }
+
+  .about-photo-placeholder span {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .about-stat {
+    padding: 1.25rem;
+    background: var(--navy-card);
+    border-radius: 4px;
+    border-left: 2px solid var(--amber);
+  }
+
+  .about-stat .number {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--amber);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .about-stat .label {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    color: var(--slate);
+    text-transform: uppercase;
+  }
+
+  /* ============================================================
+     EXPERIENCE TIMELINE
+  ============================================================ */
+  #experience { background: rgba(26, 58, 82, 0.15); }
+
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--amber), var(--navy-mid), transparent);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 1.5rem;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.25rem;
+    top: 0.6rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--amber);
+    border: 2px solid var(--navy);
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+  }
+
+  .timeline-meta {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin-bottom: 0.35rem;
+  }
+
+  .timeline-org {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--slate);
+    margin-bottom: 0.75rem;
+  }
+
+  .timeline-item p {
+    font-size: 0.95rem;
+    color: var(--body-gray);
+    max-width: 70ch;
+    margin-bottom: 0.75rem;
+  }
+
+  .tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    background: rgba(245, 158, 11, 0.12);
+    color: var(--amber);
+    margin: 0.2rem 0.2rem 0.2rem 0;
+    text-transform: uppercase;
+  }
+
+  /* ============================================================
+     PROJECTS
+  ============================================================ */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    background: var(--navy-card);
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid rgba(123, 158, 196, 0.15);
+    transition: transform 0.2s, border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(245, 158, 11, 0.4);
+  }
+
+  .project-img {
+    /* IMAGE NOTES are inside each card below */
+    aspect-ratio: 16/9;
+    background: var(--navy-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .project-img-placeholder {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--slate-dim);
+    text-align: center;
+    padding: 1rem;
+    line-height: 1.8;
+  }
+
+  .project-body {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-status {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+    margin-bottom: 0.75rem;
+    display: inline-block;
+    align-self: flex-start;
+  }
+
+  .status-complete {
+    background: rgba(52, 211, 153, 0.12);
+    color: #34D399;
+    border: 1px solid rgba(52, 211, 153, 0.3);
+  }
+
+  .status-progress {
+    background: rgba(245, 158, 11, 0.12);
+    color: var(--amber);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+  }
+
+  .project-body h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-context {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--slate);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+
+  .project-body p {
+    font-size: 0.9rem;
+    flex: 1;
+  }
+
+  /* ============================================================
+     BUSINESSES
+  ============================================================ */
+  #businesses { background: rgba(26, 58, 82, 0.15); }
+
+  .biz-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .biz-card {
+    background: var(--navy-card);
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid rgba(123, 158, 196, 0.15);
+  }
+
+  .biz-img {
+    aspect-ratio: 16/7;
+    background: var(--navy-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .biz-img-placeholder {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--slate-dim);
+    text-align: center;
+    padding: 1rem;
+    line-height: 1.8;
+  }
+
+  .biz-body { padding: 2rem; }
+
+  .biz-body h3 { margin-bottom: 0.25rem; }
+
+  .biz-role {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--amber);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .biz-body p { font-size: 0.92rem; }
+
+  .biz-lesson {
+    margin-top: 1.25rem;
+    padding: 1rem;
+    border-left: 2px solid var(--amber);
+    background: rgba(245, 158, 11, 0.06);
+    border-radius: 0 4px 4px 0;
+  }
+
+  .biz-lesson p {
+    font-size: 0.88rem;
+    font-style: italic;
+    color: var(--body-gray);
+    margin: 0;
+  }
+
+  /* ============================================================
+     SKILLS
+  ============================================================ */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .skill-group {
+    background: var(--navy-card);
+    border-radius: 6px;
+    padding: 1.75rem;
+    border: 1px solid rgba(123, 158, 196, 0.12);
+  }
+
+  .skill-group-title {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+  }
+
+  .skill-list {
+    list-style: none;
+  }
+
+  .skill-list li {
+    font-size: 0.88rem;
+    color: var(--body-gray);
+    padding: 0.35rem 0;
+    border-bottom: 1px solid rgba(123, 158, 196, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .skill-list li::before {
+    content: '—';
+    color: var(--amber);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    flex-shrink: 0;
+  }
+
+  .awards-list {
+    list-style: none;
+    margin-top: 1rem;
+  }
+
+  .awards-list li {
+    font-size: 0.88rem;
+    color: var(--body-gray);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(123, 158, 196, 0.08);
+  }
+
+  .award-title {
+    display: block;
+    color: var(--white);
+    font-weight: 500;
+    margin-bottom: 0.1rem;
+  }
+
+  .award-org {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--slate);
+  }
+
+  /* ============================================================
+     EDUCATION
+  ============================================================ */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .edu-card {
+    background: var(--navy-card);
+    border-radius: 6px;
+    padding: 2rem;
+    border: 1px solid rgba(123, 158, 196, 0.12);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .edu-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--amber);
+  }
+
+  .edu-year {
+    font-family: var(--font-mono);
+    font-size: 3rem;
+    font-weight: 500;
+    color: rgba(245, 158, 11, 0.15);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .edu-degree {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--white);
+    margin-bottom: 0.25rem;
+  }
+
+  .edu-school {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--amber);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .edu-note {
+    font-size: 0.85rem;
+    color: var(--slate);
+    margin: 0;
+    max-width: 100%;
+  }
+
+  /* ============================================================
+     CONTACT / FOOTER
+  ============================================================ */
+  #contact {
+    text-align: center;
+    padding: 6rem 2.5rem;
+    max-width: 100%;
+    border-top: 1px solid rgba(123, 158, 196, 0.1);
+    background: rgba(26, 58, 82, 0.2);
+  }
+
+  .contact-inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .contact-quote {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-style: italic;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .contact-link {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    color: var(--slate);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s;
+  }
+
+  .contact-link:hover {
+    color: var(--amber);
+    text-decoration: none;
+  }
+
+  .contact-link .icon {
+    color: var(--amber);
+    font-size: 0.9rem;
+  }
+
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--slate-dim);
+    letter-spacing: 0.08em;
+    border-top: 1px solid rgba(123, 158, 196, 0.08);
+  }
+
+  /* ============================================================
+     RESPONSIVE
+  ============================================================ */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links { gap: 1rem; }
+    .nav-links li:not(:last-child) { display: none; }
+
+    section { padding: 4rem 1.25rem; }
+    #hero { padding: 7rem 1.25rem 3rem; }
+
+    .about-grid { grid-template-columns: 1fr; }
+    .about-photo { aspect-ratio: 3/2; order: -1; }
+    .about-stats { grid-template-columns: 1fr 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .biz-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .edu-grid { grid-template-columns: 1fr; }
+    .contact-links { flex-direction: column; align-items: center; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .proof-track { animation: none; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAV
+============================================================ -->
+<nav>
+  <div class="nav-logo">JM // Portfolio</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#businesses">Ventures</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ============================================================
+     HERO
+     IMAGE NOTE: To add a background photo, find the .hero-bg CSS rule above
+     and replace the gradient with:
+     background: linear-gradient(rgba(15,26,46,0.75), rgba(15,26,46,0.92)), url('hero.jpg') center/cover no-repeat;
+     Best photo: your Colorado mountains/forest shot from the Canva portfolio.
+============================================================ -->
+<section id="hero" class="section-full">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-tag">Operations · Project Management · Englewood, CO</p>
+    <h1>James<br>Mahoney</h1>
+    <p class="hero-sub">
+      Fifteen years of making complex things work under pressure —
+      in kitchens, on trails, in boardrooms, and in grant offices.
+      Performs best when the situation is complicated and the stakes are real.
+    </p>
+    <a href="#contact" class="hero-cta">Get in touch ↓</a>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROOF POINTS TICKER
+     Your war stories as stats — the signature element.
+     Edit any of the .proof-item entries to update them.
+============================================================ -->
+<div class="proof-bar">
+  <div class="proof-track">
+    <!-- First set -->
+    <span class="proof-item"><span class="stat">72 hrs</span> continuous operations, Star Wars opening <span class="proof-sep">·</span></span>
+    <span class="proof-item"><span class="stat">$34,500</span> grant managed start to finish <span class="proof-sep">·</span></span>
+    <span class="proof-item"><span class="stat">~$9M</span> annual revenue venue <span class="proof-sep">·</span></span>
+    <span class="proof-item"><span class="stat">500+</span> miles on foot <span class="proof-sep">·</span></span>
+    <span class="proof-item"><span class="stat">Carlton Complex Fire</span> — kept the kitchen running <span class="proof-sep">·</span></span>
+    <span class="proof-item"><span class="stat">12 yrs</span> Alamo Drafthouse <span class="proof-sep">·</span></span>
+    <span class="proof-item"><span class="stat">2 degrees</span> — and a CAPM on the way <span class="proof-sep">·</span></span>
+    <span class="proof-item"><span class="stat">Barbenheimer</span> — 2 weeks sold out, zero meltdowns <span class="proof-sep">·</span></span>
+    <span class="proof-item"><span class="stat">1 diner</span> opened on COVID lockdown day — still standing <span class="proof-sep">·</span></span>
+    <!-- Duplicate for seamless loop -->
+    <span class="proof-item"><span class="stat">72 hrs</span> continuous operations, Star Wars opening <span class="proof-sep">·</span></span>
+    <span class="proof-item"><span class="stat">$34,500</span> grant managed start to finish <span class="proof-sep">·</span></span>
+    <span class="proof-item"><span class="stat">~$9M</span> annual revenue venue <span class="proof-sep">·</span></span>
+    <span class="proof-item"><span class="stat">500+</span> miles on foot <span class="proof-sep">·</span></span>
+    <span class="proof-item"><span class="stat">Carlton Complex Fire</span> — kept the kitchen running <span class="proof-sep">·</span></span>
+    <span class="proof-item"><span class="stat">12 yrs</span> Alamo Drafthouse <span class="proof-sep">·</span></span>
+    <span class="proof-item"><span class="stat">2 degrees</span> — and a CAPM on the way <span class="proof-sep">·</span></span>
+    <span class="proof-item"><span class="stat">Barbenheimer</span> — 2 weeks sold out, zero meltdowns <span class="proof-sep">·</span></span>
+    <span class="proof-item"><span class="stat">1 diner</span> opened on COVID lockdown day — still standing <span class="proof-sep">·</span></span>
+  </div>
+</div>
+
+<!-- ============================================================
+     ABOUT
+============================================================ -->
+<section id="about">
+  <div class="about-grid">
+
+    <div class="about-photo">
+      <!-- ============================================================
+           IMAGE NOTE: Your professional headshot goes here.
+           To add it, replace this div's contents with:
+           <img src="headshot.jpg" alt="James Mahoney">
+           Use the navy blazer photo from your Canva portfolio.
+           Minimum recommended size: 600x750px
+      ============================================================ -->
+      <div class="about-photo-placeholder">
+        <span>📸</span>
+        Place headshot here<br>
+        <small>(navy blazer photo<br>from Canva portfolio)</small>
+      </div>
+    </div>
+
+    <div class="about-text">
+      <p class="eyebrow">About Me</p>
+      <h2>Jack of All Trades.<br>Master of Getting<br>Things Done.</h2>
+      <div class="divider"></div>
+      <p>
+        I find much of my inspiration in the outdoors — it's where I go to reset and realign.
+        With over 500 miles under my feet, I'm not afraid to walk a long journey in unfamiliar areas.
+      </p>
+      <p>
+        My career has taken me from line cook to operations manager, from nonprofit coordinator
+        to board advisor, from startup co-founder to project manager. Not everything was a success —
+        but it's what we do with the failures that matter.
+      </p>
+      <p>
+        Currently pursuing CAPM certification through PMI while actively coordinating projects
+        at Always Choose Adventures and building Table Operations Group.
+      </p>
+
+      <div class="about-stats">
+        <div class="about-stat">
+          <div class="number">15+</div>
+          <div class="label">Years in Operations</div>
+        </div>
+        <div class="about-stat">
+          <div class="number">2</div>
+          <div class="label">Degrees Earned</div>
+        </div>
+        <div class="about-stat">
+          <div class="number">$34.5K</div>
+          <div class="label">Grant Managed</div>
+        </div>
+        <div class="about-stat">
+          <div class="number">500+</div>
+          <div class="label">Trail Miles</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     EXPERIENCE
+============================================================ -->
+<section id="experience" class="section-full">
+  <div style="max-width:1100px; margin:0 auto; padding: 0 2.5rem;">
+    <p class="eyebrow">Work History</p>
+    <h2>Experience</h2>
+    <div class="divider"></div>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-meta">Jan 2025 – Present</div>
+        <h3>Project Coordinator & Operations Advisor</h3>
+        <div class="timeline-org">Always Choose Adventures — Idaho Springs, CO</div>
+        <p>
+          Managed a $34,500 CDFC grant end-to-end — application through contractor coordination,
+          budget reconciliation, and formal closeout. Currently advising the board of directors
+          on organizational structure and scaling strategy during the nonprofit's most significant
+          growth period. Co-facilitated 8 outdoor recreation workshops for underserved youth
+          across Denver-area partner organizations.
+        </p>
+        <span class="tag">Grant Management</span>
+        <span class="tag">Board Advisory</span>
+        <span class="tag">Nonprofit</span>
+        <span class="tag">WBS & Risk</span>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-meta">Mar 2013 – Mar 2025</div>
+        <h3>Restaurant & Theater Manager</h3>
+        <div class="timeline-org">Alamo Drafthouse Cinema — Littleton, CO</div>
+        <p>
+          Grew from line cook to manager over 12 years at a ~$9M annual revenue venue.
+          Led operations through mass management turnover, active union organizing,
+          a company-wide POS migration from Aloha to Toast, and sustained peak demand
+          including a 72-hour continuous Star Wars opening and two sold-out weeks of Barbenheimer.
+          Supervised teams of 20–50 staff. Maintained CoGS below 25% on a high-volume F&B program.
+        </p>
+        <span class="tag">High-Volume Ops</span>
+        <span class="tag">Systems Implementation</span>
+        <span class="tag">Team Leadership</span>
+        <span class="tag">Crisis Management</span>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-meta">2014</div>
+        <h3>Line Cook & Operations Staff</h3>
+        <div class="timeline-org">Sun Mountain Lodge — Winthrop, WA</div>
+        <p>
+          Maintained food service operations during the Carlton Complex Fire —
+          one of the most destructive wildfires in Washington state history.
+          Improvised production from a cooler truck during full regional evacuation
+          and restored lodge operations on return.
+        </p>
+        <span class="tag">Crisis Operations</span>
+        <span class="tag">Remote Environment</span>
+        <span class="tag">Continuity Management</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROJECTS
+============================================================ -->
+<section id="projects">
+  <p class="eyebrow">Project Portfolio</p>
+  <h2>Real work.<br>Real stakes.</h2>
+  <div class="divider"></div>
+  <p style="margin-bottom: 3rem;">
+    From grant-funded accessible infrastructure to full event project planning,
+    these projects represent the complete PM toolkit applied outside the classroom.
+  </p>
+
+  <div class="projects-grid">
+
+    <!-- PROJECT 1: WEDDING MOCK -->
+    <div class="project-card">
+      <div class="project-img">
+        <!-- ============================================================
+             IMAGE NOTE: Screenshot of your actual WBS or Gantt chart
+             from the wedding project deliverable. Real artifacts are
+             more impressive than stock photos here.
+             File name suggestion: wedding-gantt.png
+             To add: <img src="wedding-gantt.png" alt="Wedding project Gantt chart">
+        ============================================================ -->
+        <div class="project-img-placeholder">
+          📋 Place screenshot of<br>WBS or Gantt chart here<br>
+          <small>(from MGT 4550 deliverable)</small>
+        </div>
+      </div>
+      <div class="project-body">
+        <span class="project-status status-complete">Complete</span>
+        <h3>Tony & Peggy Sue Wedding Plan</h3>
+        <div class="project-context">MGT 4550 · MSU Denver · Spring 2026</div>
+        <p>
+          Full project plan for a 250–300 guest outdoor wedding with a $40,000 NTE budget.
+          39 tasks across 7 work packages — WBS, Gantt, critical path, RAM, risk register,
+          and phased budget model with cumulative cost curve.
+        </p>
+      </div>
+    </div>
+
+    <!-- PROJECT 2: BRAILLE TRAIL -->
+    <div class="project-card">
+      <div class="project-img">
+        <!-- ============================================================
+             IMAGE NOTE: Trail or campground photo from Camp ACA.
+             Accessible path, signage, or construction progress shots ideal.
+             If you have site photos, use those — they're the best artifact.
+             File name suggestion: braille-trail.jpg
+             To add: <img src="braille-trail.jpg" alt="Braille trail at Camp ACA">
+        ============================================================ -->
+        <div class="project-img-placeholder">
+          🏕️ Place Camp ACA trail<br>or campground photo here<br>
+          <small>(accessible path or signage)</small>
+        </div>
+      </div>
+      <div class="project-body">
+        <span class="project-status status-complete">Complete</span>
+        <h3>Braille Trail & Accessible Campground</h3>
+        <div class="project-context">Always Choose Adventures · CDFC Grant · 2025</div>
+        <p>
+          $34,500 grant managed end-to-end. Contractor coordination, site oversight,
+          budget reconciliation, and formal CDLE closeout. Returned ~$7,050 in unspent
+          funds — on scope, on budget, on time.
+        </p>
+      </div>
+    </div>
+
+    <!-- PROJECT 3: ADA CABIN -->
+    <div class="project-card">
+      <div class="project-img">
+        <!-- ============================================================
+             IMAGE NOTE: Camp ACA exterior or Colorado mountain landscape.
+             A site sketch or map would be ideal if one exists.
+             File name suggestion: ada-cabin-site.jpg
+             To add: <img src="ada-cabin-site.jpg" alt="Camp ACA site">
+        ============================================================ -->
+        <div class="project-img-placeholder">
+          🏔️ Place Camp ACA exterior<br>or site landscape photo here<br>
+          <small>(mountain or camp setting)</small>
+        </div>
+      </div>
+      <div class="project-body">
+        <span class="project-status status-progress">In Progress</span>
+        <h3>ADA Accessible Cabin</h3>
+        <div class="project-context">Always Choose Adventures · Pre-Development · 2025–Present</div>
+        <p>
+          Future capital build at Camp ACA. Current scope: stakeholder feedback,
+          preliminary WBS, multi-scenario cost analysis, and board-level funding
+          strategy. Scoping something before the budget exists is one of the
+          harder PM skills to show.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     BUSINESSES / VENTURES
+============================================================ -->
+<section id="businesses" class="section-full">
+  <div style="max-width:1100px; margin:0 auto; padding: 0 2.5rem;">
+    <p class="eyebrow">Ventures</p>
+    <h2>Started from scratch.<br>Learned the hard way.</h2>
+    <div class="divider"></div>
+
+    <div class="biz-grid">
+
+      <!-- ALFAJORES -->
+      <div class="biz-card">
+        <div class="biz-img">
+          <!-- ============================================================
+               IMAGE NOTE: Alfajores product photo or team photo from
+               the capstone pitch. You have several images from the
+               presentation — the cookies on the table, the team,
+               or the packaged product work well here.
+               File name suggestion: alfajores.jpg
+               To add: <img src="alfajores.jpg" alt="Alfajores Cookie Co.">
+          ============================================================ -->
+          <div class="biz-img-placeholder">
+            🍪 Place Alfajores product<br>or team photo here<br>
+            <small>(from capstone pitch presentation)</small>
+          </div>
+        </div>
+        <div class="biz-body">
+          <h3>Alfajores Cookie Co.</h3>
+          <div class="biz-role">Co-Founder, Operations & Supply Chain · 2026</div>
+          <p>
+            A four-person student startup producing authentic Argentine dulce de leche cookies.
+            As operations and supply chain co-founder, I owned production scheduling,
+            ingredient sourcing, packaging, and a scale-up roadmap from 30 to 500 units per day.
+            Pitched to a live investor panel. Modeled CoGS across three production scenarios.
+          </p>
+          <div class="biz-lesson">
+            <p>What I learned: building a supply chain from scratch with no money
+            and four opinions is exactly as hard as it sounds — and exactly as valuable.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- A&K'S PLACE -->
+      <div class="biz-card">
+        <div class="biz-img">
+          <!-- ============================================================
+               IMAGE NOTE: Georgetown, CO street scene or diner-style imagery.
+               If you have any photos from A&K's — the space, signage,
+               anything from the build-out — those are the best choice.
+               If not, a Georgetown Colorado exterior shot sets the context.
+               File name suggestion: aks-place.jpg or georgetown.jpg
+               To add: <img src="georgetown.jpg" alt="Georgetown, Colorado">
+          ============================================================ -->
+          <div class="biz-img-placeholder">
+            🏔️ Place Georgetown, CO photo<br>or A&K's build-out photo here<br>
+            <small>(any photos from the space work)</small>
+          </div>
+        </div>
+        <div class="biz-body">
+          <h3>A&K's Place</h3>
+          <div class="biz-role">Co-Founder · Georgetown, CO · 2020</div>
+          <p>
+            A diner concept co-founded with a colleague from Alamo Drafthouse.
+            We negotiated a lease, completed build-out, hired staff, and reached
+            grand opening — on the day Colorado issued its first COVID-19 lockdown orders.
+            We navigated landlord disputes and contract crises under conditions nobody planned for.
+          </p>
+          <div class="biz-lesson">
+            <p>"My greatest failure led to the greatest version of myself."
+            The closure sent me back to school, which sent me here.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SKILLS, CERTS & AWARDS
+============================================================ -->
+<section id="skills">
+  <p class="eyebrow">Capabilities</p>
+  <h2>Skills, Certs<br>& Awards</h2>
+  <div class="divider"></div>
+
+  <div class="skills-grid">
+
+    <div class="skill-group">
+      <div class="skill-group-title">Project Management</div>
+      <ul class="skill-list">
+        <li>Full project lifecycle management</li>
+        <li>WBS, Gantt & network diagrams</li>
+        <li>Critical path analysis</li>
+        <li>Risk assessment & mitigation</li>
+        <li>Budget tracking & reporting</li>
+        <li>Grant writing & administration</li>
+        <li>Stakeholder communication</li>
+        <li>Earned Value Management</li>
+      </ul>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-title">Operations</div>
+      <ul class="skill-list">
+        <li>High-volume F&B operations</li>
+        <li>Systems implementation & training</li>
+        <li>Vendor & inventory management</li>
+        <li>Staff scheduling & resource planning</li>
+        <li>Crisis & continuity management</li>
+        <li>Process documentation & SOPs</li>
+        <li>Cross-functional coordination</li>
+        <li>CoGS & P&L awareness</li>
+      </ul>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-title">Tools & Platforms</div>
+      <ul class="skill-list">
+        <li>Microsoft Office Suite</li>
+        <li>Google Workspace</li>
+        <li>Trello · Jira · Miro</li>
+        <li>Lucid Chart</li>
+        <li>Toast POS (implementation exp.)</li>
+        <li>PMI Infinity</li>
+        <li>DaVinci Resolve (learning)</li>
+      </ul>
+
+      <div class="skill-group-title" style="margin-top:1.5rem;">Certifications</div>
+      <ul class="awards-list">
+        <li>
+          <span class="award-title">CAPM Candidate</span>
+          <span class="award-org">Project Management Institute · 2026</span>
+        </li>
+        <li>
+          <span class="award-title">Wilderness First Responder</span>
+          <span class="award-org">NOLS / WMI</span>
+        </li>
+        <li>
+          <span class="award-title">PMI Member</span>
+          <span class="award-org">Mile-Hi Chapter · Denver, CO</span>
+        </li>
+      </ul>
+
+      <div class="skill-group-title" style="margin-top:1.5rem;">Awards & Honors</div>
+      <ul class="awards-list">
+        <li>
+          <span class="award-title">Outstanding Student — Entrepreneurship</span>
+          <span class="award-org">MSU Denver · Spring 2026</span>
+        </li>
+        <li>
+          <span class="award-title">Provost's Honor Roll</span>
+          <span class="award-org">MSU Denver · Fall 2024 & Fall 2025</span>
+        </li>
+        <li>
+          <span class="award-title">Beta Gamma Sigma</span>
+          <span class="award-org">Business Honor Society</span>
+        </li>
+        <li>
+          <span class="award-title">National Society of Leadership & Success</span>
+          <span class="award-org">MSU Denver</span>
+        </li>
+        <li>
+          <span class="award-title">Dean's List</span>
+          <span class="award-org">Colorado Mountain College</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     EDUCATION
+============================================================ -->
+<style>
+  .school-msu     { color: #D11242; }
+  .school-cmc     { color: #F5C518; }
+  .school-sheridan{ color: #C0C0C0; }
+  .edu-card-msu::after      { background: linear-gradient(90deg, #00447C, #D11242); }
+  .edu-card-cmc::after      { background: linear-gradient(90deg, #1B4D8E, #F5C518); }
+  .edu-card-sheridan::after { background: linear-gradient(90deg, #4169E1, #C0C0C0); }
+  .edu-card-gap::after      { background: linear-gradient(90deg, #595959, #F59E0B); }
+  .edu-card-gap {
+    border: 1px dashed rgba(123,158,196,0.25);
+    background: rgba(26,58,82,0.4);
+    grid-column: 1 / -1;
+  }
+  .gap-label {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.5rem;
+  }
+  .edu-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  @media (max-width: 900px) { .edu-grid-3 { grid-template-columns: 1fr; } }
+</style>
+
+<section id="education" style="background: rgba(26,58,82,0.15); max-width:100%; padding: 6rem 2.5rem;">
+  <div style="max-width:1100px; margin:0 auto;">
+    <p class="eyebrow">Education</p>
+    <h2>The Long &amp;<br>Unending Road</h2>
+    <div class="divider"></div>
+    <p style="margin-bottom:2.5rem; max-width:70ch;">
+      I have a strange history with education. I transferred schools before my junior year of high school
+      and the transcripts got lost in the handoff &mdash; neither school told the other until second semester
+      of what should have been my final year. I graduated in 2008, a year later than planned.
+      The gap that followed taught me more about resilience than any classroom did.
+      Until I finally took the plunge, I genuinely thought I could not be a college success story.
+      The transcript says otherwise. To be continued&hellip;
+    </p>
+
+    <div class="edu-grid-3">
+
+      <div class="edu-card edu-card-sheridan">
+        <div class="edu-year">2008</div>
+        <div class="edu-degree">High School Diploma</div>
+        <div class="edu-school school-sheridan">Sheridan High School</div>
+        <p class="edu-note">
+          Englewood, CO<br>
+          Graduated one year behind schedule after a mid-high-school transfer
+          caused a transcript processing failure between schools &mdash;
+          a lesson in bureaucratic systems failing people that stuck with me.<br><br>
+          Completed a college-credit culinary course during this period.
+          Never used the credits. Absolutely used the knowledge.
+        </p>
+      </div>
+
+      <div class="edu-card edu-card-cmc">
+        <div class="edu-year">2022</div>
+        <div class="edu-degree">Associate of Arts in Outdoor Recreation Leadership</div>
+        <div class="edu-school school-cmc">Colorado Mountain College</div>
+        <p class="edu-note">
+          Dean&apos;s List<br>
+          Wilderness First Responder Certified<br><br>
+          Relevant coursework: Outdoor Leadership, Backcountry Navigation,
+          Environmental Ethics, Wilderness First Responder,
+          Outdoor Recreation Programming
+        </p>
+      </div>
+
+      <div class="edu-card edu-card-msu">
+        <div class="edu-year">2026</div>
+        <div class="edu-degree">Bachelor of Arts in Business</div>
+        <div class="edu-school school-msu">Metropolitan State University of Denver</div>
+        <p class="edu-note">
+          Concentration: Entrepreneurship<br>
+          GPA: 3.46 &middot; Provost&apos;s Honor Roll (&times;2)<br>
+          Outstanding Student &mdash; Entrepreneurship, Spring 2026<br><br>
+          Relevant coursework: Project Management, Operations Management,
+          Supply Chain, Organizational Management Consulting,
+          Entrepreneurial Business Plan, Global Entrepreneurship
+        </p>
+      </div>
+
+    </div>
+
+    <div style="margin-top:1.5rem;">
+      <div class="edu-card edu-card-gap">
+        <div class="gap-label">The Gap &middot; 2008 &mdash; 2020</div>
+        <div class="edu-degree" style="font-size:1.1rem;">Twelve Years in the Field</div>
+        <p class="edu-note" style="margin-top:0.75rem; max-width:100%;">
+          Between Sheridan and Colorado Mountain College, I spent twelve years building real skills in
+          real environments &mdash; kitchens, trails, theaters, event floors, and eventually a diner of my own.
+          I managed people, money, inventory, crises, and competing priorities without a degree to back me up.
+          When COVID closed A&amp;K&apos;s Place on opening day in 2020, it became clear that the instincts were there &mdash;
+          they just needed the framework. That&apos;s what sent me back to school.
+          Everything in this portfolio came from that decision.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT / FOOTER
+============================================================ -->
+<section id="contact">
+  <div class="contact-inner">
+    <p class="eyebrow">Get In Touch</p>
+    <h2 style="text-align:center;">Let's connect.</h2>
+    <div class="divider" style="margin: 1.5rem auto;"></div>
+    <p class="contact-quote">
+      "My greatest failure led to the greatest version of myself."
+    </p>
+    <p style="text-align:center; max-width:50ch; margin: 0 auto;">
+      Thank you for taking the time to learn a little about where I've been
+      and where I'm going. I'm always open to a conversation — about opportunities,
+      collaboration, or just a good cup of coffee.
+    </p>
+    <div class="contact-links">
+      <a href="https://linkedin.com/in/mahoney-james6287" class="contact-link" target="_blank">
+        <span class="icon">↗</span> linkedin.com/in/mahoney-james6287
+      </a>
+      <a href="tel:3035183319" class="contact-link">
+        <span class="icon">◎</span> (303) 518-3319
+      </a>
+      <a href="mailto:mahoney.james6278@gmail.com" class="contact-link">
+        <span class="icon">✉</span> mahoney.james6278@gmail.com
+      </a>
+      <span class="contact-link">
+        <span class="icon">◈</span> Englewood, CO 80113
+      </span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  James Mahoney · Table Operations Group · PMI Mile-Hi Chapter · CAPM Candidate 2026
+</footer>
+
+</body>
+</html>
