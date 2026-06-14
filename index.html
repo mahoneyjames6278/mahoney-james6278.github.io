@@ -173,7 +173,7 @@
        portfolio works perfectly. Use a dark overlay on top.
        Example: background: linear-gradient(rgba(15,26,46,0.75), rgba(15,26,46,0.92)), url('hero.jpg') center/cover;
     ============================================================ */
-    background: linear-gradient(135deg, #0F1A2E 0%, #1A3A52 50%, #0F1A2E 100%);
+    background: linear-gradient(rgba(15,26,46,0.65), rgba(15,26,46,0.88)), url('Adventure Awaits.jpg') center/cover no-repeat;
   }
 
   .hero-content {
@@ -891,11 +891,7 @@
            Use the navy blazer photo from your Canva portfolio.
            Minimum recommended size: 600x750px
       ============================================================ -->
-      <div class="about-photo-placeholder">
-        <span>📸</span>
-        Place headshot here<br>
-        <small>(navy blazer photo<br>from Canva portfolio)</small>
-      </div>
+      <img src="Headshot.png" alt="James Mahoney">
     </div>
 
     <div class="about-text">
@@ -1027,10 +1023,7 @@
              File name suggestion: wedding-gantt.png
              To add: <img src="wedding-gantt.png" alt="Wedding project Gantt chart">
         ============================================================ -->
-        <div class="project-img-placeholder">
-          📋 Place screenshot of<br>WBS or Gantt chart here<br>
-          <small>(from MGT 4550 deliverable)</small>
-        </div>
+        <img src="Tony&Peggy.png" alt="Tony & Peggy Sue Wedding Plan">
       </div>
       <div class="project-body">
         <span class="project-status status-complete">Complete</span>
@@ -1054,10 +1047,7 @@
              File name suggestion: braille-trail.jpg
              To add: <img src="braille-trail.jpg" alt="Braille trail at Camp ACA">
         ============================================================ -->
-        <div class="project-img-placeholder">
-          🏕️ Place Camp ACA trail<br>or campground photo here<br>
-          <small>(accessible path or signage)</small>
-        </div>
+        <img src="Braille Trail Sign.png" alt="Braille trail sign at Camp ACA">
       </div>
       <div class="project-body">
         <span class="project-status status-complete">Complete</span>
@@ -1080,10 +1070,7 @@
              File name suggestion: ada-cabin-site.jpg
              To add: <img src="ada-cabin-site.jpg" alt="Camp ACA site">
         ============================================================ -->
-        <div class="project-img-placeholder">
-          🏔️ Place Camp ACA exterior<br>or site landscape photo here<br>
-          <small>(mountain or camp setting)</small>
-        </div>
+        <img src="ACA Fundraiser.jpg" alt="ACA Fundraiser event">
       </div>
       <div class="project-body">
         <span class="project-status status-progress">In Progress</span>
@@ -1106,9 +1093,16 @@
 ============================================================ -->
 <section id="businesses" class="section-full">
   <div style="max-width:1100px; margin:0 auto; padding: 0 2.5rem;">
-    <p class="eyebrow">Ventures</p>
-    <h2>Started from scratch.<br>Learned the hard way.</h2>
-    <div class="divider"></div>
+    <div style="display:grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: end; margin-bottom: 0;">
+      <div>
+        <p class="eyebrow">Ventures</p>
+        <h2>Started from scratch.<br>Learned the hard way.</h2>
+        <div class="divider"></div>
+      </div>
+      <div style="width: 280px; aspect-ratio: 4/3; border-radius: 6px; overflow: hidden; border: 1px solid rgba(123,158,196,0.2); flex-shrink: 0;">
+        <img src="Take the Ride.jpg" alt="Take the Ride">
+      </div>
+    </div>
 
     <div class="biz-grid">
 
@@ -1123,10 +1117,7 @@
                File name suggestion: alfajores.jpg
                To add: <img src="alfajores.jpg" alt="Alfajores Cookie Co.">
           ============================================================ -->
-          <div class="biz-img-placeholder">
-            🍪 Place Alfajores product<br>or team photo here<br>
-            <small>(from capstone pitch presentation)</small>
-          </div>
+          <img src="Cookie Base.jpg" alt="Alfajores cookies">
         </div>
         <div class="biz-body">
           <h3>Alfajores Cookie Co.</h3>
@@ -1155,10 +1146,7 @@
                File name suggestion: aks-place.jpg or georgetown.jpg
                To add: <img src="georgetown.jpg" alt="Georgetown, Colorado">
           ============================================================ -->
-          <div class="biz-img-placeholder">
-            🏔️ Place Georgetown, CO photo<br>or A&K's build-out photo here<br>
-            <small>(any photos from the space work)</small>
-          </div>
+          <img src="A&K.jpg" alt="A&K's Place">
         </div>
         <div class="biz-body">
           <h3>A&K's Place</h3>
@@ -1336,7 +1324,9 @@
         </p>
       </div>
 
-      <div class="edu-card edu-card-cmc">
+      <div class="edu-card edu-card-cmc" style="padding: 0; overflow: hidden;">
+        <div style="aspect-ratio: 16/7; overflow: hidden;"><img src="CMC Grad.jpg" alt="CMC Graduation"></div>
+        <div style="padding: 2rem;">
         <div class="edu-year">2022</div>
         <div class="edu-degree">Associate of Arts in Outdoor Recreation Leadership</div>
         <div class="edu-school school-cmc">Colorado Mountain College</div>
@@ -1347,9 +1337,12 @@
           Environmental Ethics, Wilderness First Responder,
           Outdoor Recreation Programming
         </p>
+        </div>
       </div>
 
-      <div class="edu-card edu-card-msu">
+      <div class="edu-card edu-card-msu" style="padding: 0; overflow: hidden;">
+        <div style="aspect-ratio: 16/7; overflow: hidden;"><img src="MSU Grad.jpg" alt="MSU Denver Graduation"></div>
+        <div style="padding: 2rem;">
         <div class="edu-year">2026</div>
         <div class="edu-degree">Bachelor of Arts in Business</div>
         <div class="edu-school school-msu">Metropolitan State University of Denver</div>
@@ -1361,6 +1354,7 @@
           Supply Chain, Organizational Management Consulting,
           Entrepreneurial Business Plan, Global Entrepreneurship
         </p>
+        </div>
       </div>
 
     </div>
